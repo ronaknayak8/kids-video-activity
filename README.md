@@ -10,6 +10,7 @@ Structure:
 - `/v/005/` — Video 005 placeholder
 - `/v/006/` — Video 006 placeholder
 - `/v/007/` — Video 007 placeholder
+- `/v/008/` — Video 008 placeholder
 
 When a Bunny video is ready, open that video's `index.html` and replace the
 placeholder `src` with the real Bunny player URL.
@@ -20,5 +21,6 @@ https://YOUR-DOMAIN.com/v/001/
 https://YOUR-DOMAIN.com/v/002/
 ...
 https://YOUR-DOMAIN.com/v/007/
+https://YOUR-DOMAIN.com/v/008/
 
 Do NOT put the Bunny player URLs directly into printed QR codes.
