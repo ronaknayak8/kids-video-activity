@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fff8e8">
-  <title>Activity 17 | Listen & Learn</title>
+  <title>Listen & Learn</title>
   <style>
     :root {
       --cream: #fff8e8;
@@ -261,7 +261,6 @@
   <main class="page">
     <header class="topbar" aria-label="Activity identity">
       <div class="brand"><span class="brand-mark" aria-hidden="true">★</span><span>Fun Learning Time</span></div>
-      <div class="activity-label">ACTIVITY 17</div>
     </header>
 
     <section class="intro" aria-labelledby="activity-title">
@@ -274,18 +273,18 @@
 
     <section class="player-card" aria-labelledby="player-heading">
       <h2 class="player-heading" id="player-heading">Listen to the instructions</h2>
-      <p class="recording-title">Activity 17 recording</p>
+      <p class="recording-title">Audio recording</p>
 
       <div class="player-main">
-        <button class="play-button" id="playButton" type="button" aria-label="Play Activity 17 recording" disabled>
+        <button class="play-button" id="playButton" type="button" aria-label="Play recording" disabled>
           <span class="play-icon" aria-hidden="true"></span><span class="pause-icon" aria-hidden="true"></span>
         </button>
 
         <div class="timeline">
-          <input class="seek" id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek through Activity 17 recording" disabled>
+          <input class="seek" id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek through recording" disabled>
           <div class="time-row">
             <span id="currentTime">0:00</span>
-            <button class="restart-button" id="restartButton" type="button" aria-label="Restart Activity 17 recording" title="Restart" disabled>↺</button>
+            <button class="restart-button" id="restartButton" type="button" aria-label="Restart recording" title="Restart" disabled>↺</button>
             <span id="totalTime">0:00</span>
           </div>
         </div>
@@ -325,7 +324,7 @@
       status.textContent = message;
       status.classList.add("error");
       playButton.classList.remove("is-playing");
-      playButton.setAttribute("aria-label", "Activity 17 recording unavailable");
+      playButton.setAttribute("aria-label", "Recording unavailable");
     };
 
     const updateProgress = () => {
@@ -366,7 +365,7 @@
 
     audio.addEventListener("playing", () => {
       playButton.classList.add("is-playing");
-      playButton.setAttribute("aria-label", "Pause Activity 17 recording");
+      playButton.setAttribute("aria-label", "Pause recording");
       status.classList.remove("error");
       status.textContent = "Playing";
     });
@@ -374,7 +373,7 @@
     audio.addEventListener("pause", () => {
       if (!audio.ended) {
         playButton.classList.remove("is-playing");
-        playButton.setAttribute("aria-label", "Resume Activity 17 recording");
+        playButton.setAttribute("aria-label", "Resume recording");
         if (!audio.error) status.textContent = "Paused";
       }
     });
@@ -383,7 +382,7 @@
 
     audio.addEventListener("ended", () => {
       playButton.classList.remove("is-playing");
-      playButton.setAttribute("aria-label", "Replay Activity 17 recording");
+      playButton.setAttribute("aria-label", "Replay recording");
       status.textContent = "Finished. Tap play to listen again.";
       updateProgress();
     });
