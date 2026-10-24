@@ -88,72 +88,12 @@
     }
 
     .lynx {
-      position: relative;
+      display: block;
       width: 118px;
       height: 118px;
-      border-radius: 50% 50% 44% 44%;
-      background: var(--yellow);
-      border: 3px solid rgba(38, 58, 56, 0.1);
-      box-shadow: inset 0 -12px 0 rgba(200, 138, 24, 0.08), var(--shadow);
+      object-fit: contain;
+      filter: drop-shadow(0 12px 18px rgba(83, 67, 35, 0.14));
     }
-
-    .ear {
-      position: absolute;
-      top: -12px;
-      width: 34px;
-      height: 44px;
-      background: var(--yellow);
-      border: 3px solid rgba(38, 58, 56, 0.1);
-      border-bottom: 0;
-    }
-
-    .ear::after {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 11px;
-      width: 14px;
-      height: 20px;
-      border-radius: 50% 50% 20% 20%;
-      background: #e6a957;
-    }
-
-    .ear.left { left: 5px; transform: rotate(-28deg); border-radius: 70% 15% 20% 20%; }
-    .ear.right { right: 5px; transform: rotate(28deg); border-radius: 15% 70% 20% 20%; }
-
-    .face {
-      position: absolute;
-      inset: 35px 17px 12px;
-      border-radius: 48%;
-      background: #fff8df;
-    }
-
-    .eye {
-      position: absolute;
-      top: 25px;
-      width: 9px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--ink);
-    }
-
-    .eye.left { left: 23px; }
-    .eye.right { right: 23px; }
-
-    .nose {
-      position: absolute;
-      left: 50%;
-      bottom: 26px;
-      width: 10px;
-      height: 8px;
-      transform: translateX(-50%);
-      border-radius: 50% 50% 65% 65%;
-      background: var(--teal);
-    }
-
-    .whisker { position: absolute; bottom: 20px; width: 28px; height: 1px; background: var(--ink); }
-    .whisker.left { left: 1px; transform: rotate(8deg); }
-    .whisker.right { right: 1px; transform: rotate(-8deg); }
 
     h1 {
       margin: 0 0 7px;
@@ -297,12 +237,7 @@
       body { padding-inline: 24px; }
       .page { padding-top: 28px; }
       .intro { grid-template-columns: 150px minmax(0, 1fr); gap: 24px; margin-bottom: 18px; }
-      .lynx { width: 150px; height: 150px; transform: scale(1); }
-      .face { inset: 44px 20px 14px; }
-      .eye { top: 31px; }
-      .eye.left { left: 30px; }
-      .eye.right { right: 30px; }
-      .nose { bottom: 32px; }
+      .lynx { width: 150px; height: 150px; }
       .player-card { padding: 24px; }
       .player-main { grid-template-columns: 88px minmax(0, 1fr) 44px; }
       .play-button { width: 88px; height: 88px; }
@@ -313,12 +248,6 @@
       body { padding-inline: 10px; }
       .intro { grid-template-columns: 92px minmax(0, 1fr); }
       .lynx { width: 92px; height: 92px; }
-      .lynx .face { inset: 28px 13px 9px; }
-      .lynx .eye { top: 18px; width: 7px; height: 9px; }
-      .lynx .eye.left { left: 18px; }
-      .lynx .eye.right { right: 18px; }
-      .lynx .nose { bottom: 20px; }
-      .lynx .whisker { bottom: 15px; width: 20px; }
       .player-main { grid-template-columns: 64px minmax(0, 1fr); }
       .play-button { width: 64px; height: 64px; }
     }
@@ -336,10 +265,7 @@
     </header>
 
     <section class="intro" aria-labelledby="activity-title">
-      <div class="lynx" role="img" aria-label="Friendly yellow lynx character">
-        <span class="ear left"></span><span class="ear right"></span>
-        <div class="face"><span class="eye left"></span><span class="eye right"></span><span class="nose"></span><span class="whisker left"></span><span class="whisker right"></span></div>
-      </div>
+      <img class="lynx" src="/lynx.png" alt="Friendly smiling lynx character" width="447" height="559">
       <div>
         <h1 id="activity-title">Ready for your next activity?</h1>
         <p class="intro-text">Listen to your friendly guide and follow along in your book.</p>
