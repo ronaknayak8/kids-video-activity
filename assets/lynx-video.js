@@ -29,7 +29,7 @@ const videoUrls = {
   "003": "https://media.taleybox.online/Lynx_cat/3.mp4",
   "004": "https://media.taleybox.online/Lynx_cat/4.mp4",
   "005": "https://media.taleybox.online/Lynx_cat/7.mp4",
-  "006": ""
+  "006": "",
   "007": "https://media.taleybox.online/Lynx_cat/9.mp4",
   "008": "https://media.taleybox.online/Lynx_cat/2.mp4",
   "009": "https://media.taleybox.online/Lynx_cat/5.mp4",
