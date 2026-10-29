@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7e6">
+
+  <title>Чуй какво има да ти каже Рони!</title>
+
+  <link rel="stylesheet" href="/assets/lynx-video.css">
+  <script defer src="/assets/lynx-video.js"></script>
+</head>
+
+<body>
+  <main class="card" data-activity-id="009">
+
+    <h1 id="activity-title">Чуй какво има да ти каже Рони!</h1>
+
+    <div class="video-wrapper">
+
+      <video
+        id="activity-video"
+        controls
+        playsinline
+        preload="metadata"
+        hidden
+      >
+        <source id="activity-video-source" type="video/mp4">
+        Браузърът ти не поддържа възпроизвеждане на видео.
+      </video>
+
+      <div
+        class="video-placeholder"
+        id="video-placeholder"
+        role="status"
+      >
+        <span class="play-symbol" aria-hidden="true">▶</span>
+        <p id="placeholder-text">Видеото ще бъде добавено скоро.</p>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

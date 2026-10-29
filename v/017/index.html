@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fff8e8">
-  <title>Listen & Learn</title>
+  <title>Слушай и учи</title>
   <style>
     :root {
       --cream: #fff8e8;
@@ -259,46 +259,46 @@
 </head>
 <body>
   <main class="page">
-    <header class="topbar" aria-label="Activity identity">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">★</span><span>Fun Learning Time</span></div>
+    <header class="topbar" aria-label="Идентичност на заниманието">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">★</span><span>Забавно учене</span></div>
     </header>
 
     <section class="intro" aria-labelledby="activity-title">
-      <img class="lynx" src="/lynx.png" alt="Friendly smiling lynx character" width="447" height="559">
+      <img class="lynx" src="/lynx.png" alt="Приветлив усмихнат рис" width="447" height="559">
       <div>
-        <h1 id="activity-title">Ready for your next activity?</h1>
-        <p class="intro-text">Listen to your friendly guide and follow along in your book.</p>
+        <h1 id="activity-title">Нека чуем аудио версията на приказката „Русалката и Лунният цвят”!</h1>
+        <p class="intro-text">Слушай внимателно и следвай приказката в книжката си.</p>
       </div>
     </section>
 
     <section class="player-card" aria-labelledby="player-heading">
-      <h2 class="player-heading" id="player-heading">Listen to the instructions</h2>
-      <p class="recording-title">Audio recording</p>
+      <h2 class="player-heading" id="player-heading">Аудио приказка</h2>
+      <p class="recording-title">Аудио запис</p>
 
       <div class="player-main">
-        <button class="play-button" id="playButton" type="button" aria-label="Play recording" disabled>
+        <button class="play-button" id="playButton" type="button" aria-label="Пусни записа" disabled>
           <span class="play-icon" aria-hidden="true"></span><span class="pause-icon" aria-hidden="true"></span>
         </button>
 
         <div class="timeline">
-          <input class="seek" id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek through recording" disabled>
+          <input class="seek" id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Превърти записа" disabled>
           <div class="time-row">
             <span id="currentTime">0:00</span>
-            <button class="restart-button" id="restartButton" type="button" aria-label="Restart recording" title="Restart" disabled>↺</button>
+            <button class="restart-button" id="restartButton" type="button" aria-label="Започни отначало" title="Отначало" disabled>↺</button>
             <span id="totalTime">0:00</span>
           </div>
         </div>
       </div>
 
-      <p class="status" id="status" role="status" aria-live="polite">Preparing audio…</p>
+      <p class="status" id="status" role="status" aria-live="polite">Аудиото се подготвя…</p>
       <audio id="audio" preload="metadata"></audio>
     </section>
 
-    <p class="closing">Have fun learning and exploring!</p>
+    <p class="closing">Надявам се да ти хареса!</p>
   </main>
 
   <script>
-    const AUDIO_URL = "/audio/v017.mp3"; // Replace this URL to migrate to Bunny Delivery.
+    const AUDIO_URL = "https://media.taleybox.online/Audio/audio_128k.mp3"; // Replace this URL to migrate to Bunny Delivery.
 
     const audio = document.getElementById("audio");
     const playButton = document.getElementById("playButton");
@@ -324,7 +324,7 @@
       status.textContent = message;
       status.classList.add("error");
       playButton.classList.remove("is-playing");
-      playButton.setAttribute("aria-label", "Recording unavailable");
+      playButton.setAttribute("aria-label", "Записът не е наличен");
     };
 
     const updateProgress = () => {
@@ -341,40 +341,40 @@
       restartButton.disabled = false;
       seek.disabled = false;
       status.classList.remove("error");
-      status.textContent = "Ready to listen";
+      status.textContent = "Готово за слушане";
       updateProgress();
     });
 
     audio.addEventListener("loadstart", () => {
       status.classList.remove("error");
-      status.textContent = "Preparing audio…";
+      status.textContent = "Аудиото се подготвя…";
     });
 
     audio.addEventListener("canplay", () => {
       if (!audio.error) {
         status.classList.remove("error");
-        status.textContent = audio.paused ? "Ready to listen" : "Playing";
+        status.textContent = audio.paused ? "Готово за слушане" : "Възпроизвежда се";
       }
       playButton.disabled = false;
     });
 
     audio.addEventListener("waiting", () => {
       status.classList.remove("error");
-      status.textContent = "Buffering…";
+      status.textContent = "Зареждане…";
     });
 
     audio.addEventListener("playing", () => {
       playButton.classList.add("is-playing");
-      playButton.setAttribute("aria-label", "Pause recording");
+      playButton.setAttribute("aria-label", "Пауза на записа");
       status.classList.remove("error");
-      status.textContent = "Playing";
+      status.textContent = "Възпроизвежда се";
     });
 
     audio.addEventListener("pause", () => {
       if (!audio.ended) {
         playButton.classList.remove("is-playing");
-        playButton.setAttribute("aria-label", "Resume recording");
-        if (!audio.error) status.textContent = "Paused";
+        playButton.setAttribute("aria-label", "Продължи записа");
+        if (!audio.error) status.textContent = "На пауза";
       }
     });
 
@@ -382,13 +382,13 @@
 
     audio.addEventListener("ended", () => {
       playButton.classList.remove("is-playing");
-      playButton.setAttribute("aria-label", "Replay recording");
-      status.textContent = "Finished. Tap play to listen again.";
+      playButton.setAttribute("aria-label", "Пусни отново");
+      status.textContent = "Край. Натисни бутона, за да слушаш отново.";
       updateProgress();
     });
 
     audio.addEventListener("error", () => {
-      setUnavailable("Audio is unavailable right now. Please try again when the recording is uploaded.");
+      setUnavailable("Аудиото не е налично в момента. Опитай отново, когато записът бъде качен.");
     });
 
     playButton.addEventListener("click", async () => {
@@ -397,7 +397,7 @@
           if (audio.ended) audio.currentTime = 0;
           await audio.play();
         } catch (error) {
-          setUnavailable("Playback could not start. Check your connection and try again.");
+          setUnavailable("Възпроизвеждането не можа да започне. Провери връзката си и опитай отново.");
         }
       } else {
         audio.pause();
@@ -408,8 +408,8 @@
       audio.currentTime = 0;
       seek.value = "0";
       currentTime.textContent = "0:00";
-      if (!audio.paused) status.textContent = "Playing";
-      else status.textContent = "Restarted";
+      if (!audio.paused) status.textContent = "Възпроизвежда се";
+      else status.textContent = "Започна отначало";
     });
 
     seek.addEventListener("input", () => {
