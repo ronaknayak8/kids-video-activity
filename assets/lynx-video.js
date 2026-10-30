@@ -40,7 +40,7 @@ const videoUrls = {
   "013": "https://media.taleybox.online/dir/Copy%20of%20Octopus.mp4",
   "014": "https://media.taleybox.online/dir/Copy%20of%20Crab.mp4",
   "015": "https://media.taleybox.online/dir/Copy%20of%20Shark.mp4",
-  "016": "https://media.taleybox.online/dir/Copy%20of%20Clam.mp4"
+  "016": "https://media.taleybox.online/dir/Copy%20of%20Shell.mp4"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
